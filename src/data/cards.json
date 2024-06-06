@@ -1,0 +1,275 @@
+[
+  {
+    "id": "espada-1",
+    "suit": "espada",
+    "value": 1,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-1",
+    "suit": "basto",
+    "value": 1,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-7",
+    "suit": "espada",
+    "value": 7,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-7",
+    "suit": "oro",
+    "value": 7,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-3",
+    "suit": "espada",
+    "value": 3,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-3",
+    "suit": "basto",
+    "value": 3,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-3",
+    "suit": "copa",
+    "value": 3,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-3",
+    "suit": "oro",
+    "value": 3,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-2",
+    "suit": "espada",
+    "value": 2,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-2",
+    "suit": "basto",
+    "value": 2,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-2",
+    "suit": "copa",
+    "value": 2,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-2",
+    "suit": "oro",
+    "value": 2,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-12",
+    "suit": "espada",
+    "value": 12,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-12",
+    "suit": "basto",
+    "value": 12,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-12",
+    "suit": "copa",
+    "value": 12,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-12",
+    "suit": "oro",
+    "value": 12,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-11",
+    "suit": "espada",
+    "value": 11,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-11",
+    "suit": "basto",
+    "value": 11,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-11",
+    "suit": "copa",
+    "value": 11,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-11",
+    "suit": "oro",
+    "value": 11,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-10",
+    "suit": "espada",
+    "value": 10,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-10",
+    "suit": "basto",
+    "value": 10,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-10",
+    "suit": "copa",
+    "value": 10,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-10",
+    "suit": "oro",
+    "value": 10,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-7",
+    "suit": "espada",
+    "value": 7,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-7",
+    "suit": "basto",
+    "value": 7,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-7",
+    "suit": "copa",
+    "value": 7,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-6",
+    "suit": "oro",
+    "value": 6,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-6",
+    "suit": "espada",
+    "value": 6,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-6",
+    "suit": "basto",
+    "value": 6,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-6",
+    "suit": "copa",
+    "value": 6,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-5",
+    "suit": "oro",
+    "value": 5,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-5",
+    "suit": "espada",
+    "value": 5,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-5",
+    "suit": "basto",
+    "value": 5,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-5",
+    "suit": "copa",
+    "value": 5,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "oro-4",
+    "suit": "oro",
+    "value": 4,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "espada-4",
+    "suit": "espada",
+    "value": 4,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "basto-4",
+    "suit": "basto",
+    "value": 4,
+    "shown": false,
+    "order": 0
+  },
+  {
+    "id": "copa-4",
+    "suit": "copa",
+    "value": 4,
+    "shown": false,
+    "order": 0
+  }
+]
