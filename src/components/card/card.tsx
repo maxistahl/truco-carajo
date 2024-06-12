@@ -33,11 +33,9 @@ const Card: React.FC<CardProps> = ({ id, suit, value, shown, order, onFlip, isCu
   return (
     <div onClick={onFlipEvent} className={cardClass}>
       <div className="face front">
-        <p className='front'>Card ID: {id}</p>
+        <span>{value}</span>
       </div>
-      <div className="face back">
-        <span>back</span>
-      </div>
+      <div className="face back" />
     </div>
   );
 };

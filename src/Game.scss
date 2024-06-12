@@ -1,0 +1,387 @@
+@use "sass:string";
+
+.game-board {
+  display: grid;
+  grid-template-areas:
+    'cards-hand-1 cards-hand-2'
+    'player-actions-1 player-actions-2';
+}
+
+@mixin parent($child) {
+  @at-root #{string.insert($child, "" + &, 100)} {
+    @content;
+  }
+}
+
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  gap: 24px;
+
+  h1 {
+    text-align: center;
+    background: url(assets/logo.svg) no-repeat center;
+    width: 482px;
+    height: 92px;
+    display: block;
+    margin: 0 auto;
+    color: transparent;
+    transform: translate(0, 100px);
+    transition: transform 0.5s ease-in-out 0.1s;
+
+    @include parent(".playing") {
+      transform: translate(0, 0);
+    }
+  }
+
+  button {
+    transform: translate(0, 100px);
+    opacity: 1;
+    transition: transform 0.5s ease-in-out, opacity 0.3s;
+
+    @include parent(".playing") {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+  }
+}
+
+.game-board-container {
+  position: fixed;
+  top: 96px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  opacity: 0;
+  animation: slide-in 0.5s ease-in-out 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cards-hand {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  &:nth-child(1) {
+    grid-area: cards-hand-1;
+  }
+
+  &:nth-child(2) {
+    grid-area: cards-hand-2;
+  }
+}
+
+.player-actions {
+  display: block;
+
+  &:nth-child(1) {
+    grid-area: player-actions-1;
+  }
+
+  &:nth-child(2) {
+    grid-area: player-actions-2;
+  }
+}
+
+.card {
+  width: 200px;
+  height: 280px;
+  position: relative;
+  perspective: 1000px;
+
+  .face {
+    width: 200px;
+    height: 280px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    transition: transform 0.6s;
+    transform-origin: center center;
+  }
+
+  .front {
+    transform: rotateY(180deg);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: 100%;
+      transform-origin: center;
+      transform: translate(-110%, 8px);
+      width: 42px;
+      height: 50px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0%;
+      transform-origin: center;
+      transform: translate(8px, -110%);
+      width: 42px;
+      height: 50px;
+    }
+
+    span {
+      font-family: "Gwendolyn", cursive;
+      font-weight: 700;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #000;
+    }
+
+    @include parent(".flipped") {
+      transform: rotateY(360deg);
+    }
+
+    @include parent(".suit-espada") {
+      background: linear-gradient(0deg, rgba(255, 221, 221, 0.8), rgba(255, 221, 221, 0.8)), radial-gradient(50% 50% at 50% 50%, #89C4B8 0%, #36BFCC 100%);
+
+      &:before,
+      &:after {
+        background: url(assets/espada.png) no-repeat center;
+        background-size: contain;
+        height: 100px;
+      }
+    }
+
+    @include parent(".suit-espada.value-1") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: rotate(-30deg) translate(0%, -50%);
+        width: 100px;
+        height: 240px;
+
+        background: url(assets/espada.png) no-repeat center;
+        background-size: contain;
+      }
+
+      &:after {
+        background: none;
+      }
+
+      span {
+        transform: translate(100%, -100%);
+        font-size: 64px;
+      }
+    }
+
+    @include parent(".suit-copa") {
+      background: linear-gradient(0deg, rgba(235, 251, 219, 0.8), rgba(235, 251, 219, 0.8)), radial-gradient(50% 50% at 50% 50%, #89C4B8 0%, #36BFCC 100%);
+
+      &:before,
+      &:after {
+        background: url(assets/copa.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    @include parent(".suit-copa.value-1") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -30%);
+        width: 100px;
+        height: 240px;
+
+        background: url(assets/copa.png) no-repeat center;
+        background-size: contain;
+      }
+
+      &:after {
+        background: none;
+      }
+
+      span {
+        transform: translate(-50%, -100%);
+        font-size: 64px;
+      }
+    }
+
+    @include parent(".suit-oro") {
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), radial-gradient(50% 50% at 50% 50%, #89C4B8 0%, #36BFCC 100%);
+
+      &:before,
+      &:after {
+        background: url(assets/oro.png) no-repeat center;
+        background-size: contain;
+      }
+    }
+
+    @include parent(".suit-oro.value-1") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -30%);
+        width: 100px;
+        height: 240px;
+
+        background: url(assets/oro.png) no-repeat center;
+        background-size: contain;
+      }
+
+      &:after {
+        background: none;
+      }
+
+      span {
+        transform: translate(-50%, -100%);
+        font-size: 64px;
+      }
+    }
+
+    @include parent(".suit-basto") {
+      background: linear-gradient(0deg, rgba(255, 227, 202, 0.8), rgba(255, 227, 202, 0.8)), radial-gradient(50% 50% at 50% 50%, #89C4B8 0%, #36BFCC 100%);
+
+      &:before,
+      &:after {
+        background: url(assets/basto.png) no-repeat center;
+        background-size: contain;
+        height: 100px;
+      }
+    }
+
+    @include parent(".suit-basto.value-1") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: rotate(-24deg) translate(0%, -50%);
+        width: 100px;
+        height: 240px;
+
+        background: url(assets/basto.png) no-repeat center;
+        background-size: contain;
+      }
+
+      &:after {
+        background: none;
+      }
+
+      span {
+        transform: translate(100%, -100%);
+        font-size: 64px;
+      }
+    }
+
+    @include parent(".value-10") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 180px;
+
+        background: url(assets/page-boy.png) no-repeat center;
+        background-size: contain;
+      }
+
+      span {
+        top: 0;
+        left: 100%;
+        text-align: right;
+        transform: translate(-50px, -10px);
+      }
+    }
+
+    @include parent(".value-11") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 180px;
+
+        background: url(assets/horse.png) no-repeat center;
+        background-size: contain;
+      }
+
+      span {
+        top: 0;
+        left: 100%;
+        text-align: right;
+        transform: translate(-50px, -10px);
+      }
+    }
+
+    @include parent(".value-12") {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 180px;
+
+        background: url(assets/king.png) no-repeat center;
+        background-size: contain;
+      }
+
+      span {
+        top: 0;
+        left: 100%;
+        text-align: right;
+        transform: translate(-50px, -10px);
+      }
+    }
+  }
+
+  .back {
+    transform: rotateY(0deg);
+
+    background: url(assets/pattern.png) repeat;
+    background-size: 16px;
+
+    @include parent(".flipped") {
+      transform: rotateY(180deg);
+    }
+  }
+}

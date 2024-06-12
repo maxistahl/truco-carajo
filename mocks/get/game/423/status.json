@@ -1,0 +1,99 @@
+{
+  "player1": {
+    "id": "player1",
+    "playerName": "Jugador 1",
+    "score": 0,
+    "cards": [
+      {
+        "id": "espada-10",
+        "suit": "espada",
+        "value": 10,
+        "shown": false,
+        "order": 0
+      },
+      {
+        "id": "copa-11",
+        "suit": "copa",
+        "value": 11,
+        "shown": false,
+        "order": 0
+      },
+      {
+        "id": "oro-12",
+        "suit": "oro",
+        "value": 12,
+        "shown": false,
+        "order": 0
+      }
+    ],
+    "availableMovements": [
+      {
+        "id": "1",
+        "name": "Envido",
+        "type": "envido"
+      },
+      {
+        "id": "2",
+        "name": "Truco",
+        "type": "truco"
+      },
+      {
+        "id": "3",
+        "name": "Flor",
+        "type": "flor"
+      }
+    ]
+  },
+  "player2": {
+    "id": "player2",
+    "playerName": "Jugador 2",
+    "score": 0,
+    "cards": [
+      {
+        "id": "espada-10",
+        "suit": "espada",
+        "value": 10,
+        "shown": false,
+        "order": 0
+      },
+      {
+        "id": "oro-3",
+        "suit": "oro",
+        "value": 3,
+        "shown": false,
+        "order": 0
+      },
+      {
+        "id": "copa-4",
+        "suit": "copa",
+        "value": 4,
+        "shown": false,
+        "order": 0
+      }
+    ],
+    "availableMovements": [
+      {
+        "id": "1",
+        "name": "Envido",
+        "type": "envido"
+      },
+      {
+        "id": "2",
+        "name": "Truco",
+        "type": "truco"
+      },
+      {
+        "id": "3",
+        "name": "Flor",
+        "type": "flor"
+      }
+    ]
+  },
+  "currentPlayer": "player1",
+  "status": "init",
+  "score": {
+    "player1": 0,
+    "player2": 0
+  },
+  "gameMode": "vs-computer"
+}
